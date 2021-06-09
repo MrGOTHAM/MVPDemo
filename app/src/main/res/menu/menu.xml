@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id="@+id/listView"
+        android:title="ListView样式">
+        <menu>
+            <item android:id="@+id/vertical_listView"
+                android:title="垂直listView" />
+
+            <item android:id="@+id/horizontal_listView"
+                android:title="水平listView" />
+        </menu>
+    </item>
+    <item android:id="@+id/glideView"
+        android:title="glideView样式">
+        <menu>
+            <item android:id="@+id/vertical_glideView"
+                android:title="垂直GlideView"/>
+            <item android:id="@+id/horizontal_glideView"
+                android:title="水平GlideView"/>
+
+        </menu>
+    </item>
+    <item android:id="@+id/staggerView"
+        android:title="staggerView样式">
+        <menu>
+            <item android:id="@+id/vertical_staggerView"
+                android:title="垂直staggerView"/>
+            <item android:id="@+id/horizontal_staggerView"
+                android:title="水平staggerView"/>
+
+        </menu>
+    </item>
+</menu>

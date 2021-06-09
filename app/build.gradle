@@ -40,9 +40,11 @@ dependencies {
     implementation 'com.squareup.retrofit2:retrofit:2.9.0'
     //事件流 rxjava
     implementation 'com.squareup.retrofit2:adapter-rxjava3:2.9.0'
-
+    implementation 'io.reactivex.rxjava3:rxandroid:3.0.0'
     implementation 'io.reactivex.rxjava3:rxjava:3.0.0'
     implementation 'com.squareup.retrofit2:converter-gson:2.9.0'
-
-
+    implementation 'com.squareup.okhttp3:logging-interceptor:3.8.1'
+    //导入Gson 库
+    implementation 'com.google.code.gson:gson:2.8.6'
+    implementation 'com.android.support:recyclerview-v7:30+'
 }
