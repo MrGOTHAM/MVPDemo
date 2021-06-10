@@ -24,7 +24,7 @@ public class PageBean<T> implements Serializable {
         private long pageCount;
         private long size;
         private long total;
-        private T datas;
+        private List<T> datas;
 
         public long getCurPage() {
                 return curPage;
@@ -74,11 +74,11 @@ public class PageBean<T> implements Serializable {
                 this.total = total;
         }
 
-        public T getDatas() {
+        public List<T> getDatas() {
                 return datas;
         }
 
-        public void setDatas(T datas) {
+        public void setDatas(List<T> datas) {
                 this.datas = datas;
         }
 }

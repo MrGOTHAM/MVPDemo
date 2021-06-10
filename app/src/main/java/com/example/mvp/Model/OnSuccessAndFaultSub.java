@@ -9,15 +9,8 @@ import java.net.UnknownHostException;
 import javax.net.ssl.SSLHandshakeException;
 import io.reactivex.rxjava3.annotations.NonNull;
 import io.reactivex.rxjava3.observers.DisposableObserver;
-
-import com.example.mvp.Bean.BaseBean;
-import com.example.mvp.Bean.NewData;
-import com.example.mvp.Model.Callback;
-import com.example.mvp.NetUtils.GsonUtils;
-
 import org.json.JSONException;
 import org.json.JSONObject;
-
 import okhttp3.ResponseBody;
 import retrofit2.HttpException;
 

@@ -73,7 +73,6 @@ public class MainPresenter extends BasePresenter<IView> {
                     getView().hideProgress();
                 }
             }
-
         }));
     }
 }

@@ -16,6 +16,11 @@ allprojects {
     repositories {
         google()
         jcenter()
+        maven{              //alibaba镜像
+
+            url "http://maven.aliyun.com/nexus/content/groups/public/"
+
+        }
     }
 }
 

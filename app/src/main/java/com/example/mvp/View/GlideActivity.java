@@ -10,14 +10,14 @@ import android.view.MenuItem;
 import android.widget.Toast;
 
 import com.example.mvp.Adapter.ListViewAdapter;
-import com.example.mvp.Bean.ItemsBean;
-import com.example.mvp.Bean.NewData;
+import com.example.mvp.Bean.ItemBean;
 import com.example.mvp.Presenter.GlidePresenter;
 import com.example.mvp.R;
+import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 
-public class GlideActivity extends BaseActivity implements IView<ArrayList<NewData.DataBean.DatasBean>>{
+public class GlideActivity extends BaseActivity implements IView<ArrayList<ItemBean>>{
 
     RecyclerView mRecyclerView;
     GlidePresenter mGlidePresenter;
@@ -74,7 +74,7 @@ public class GlideActivity extends BaseActivity implements IView<ArrayList<NewDa
     }
 
     @Override
-    public void showData(ArrayList<NewData.DataBean.DatasBean> data) {
+    public void showData(ArrayList<ItemBean> data) {
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this);
         mRecyclerView.setLayoutManager(linearLayoutManager);
         ListViewAdapter listViewAdapter =new ListViewAdapter(data);

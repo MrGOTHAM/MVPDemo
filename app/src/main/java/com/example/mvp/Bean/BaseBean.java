@@ -35,8 +35,4 @@ public class BaseBean<T> implements Serializable {
         this.errorMsg = errorMsg;
     }
 
-
-
-
-
 }

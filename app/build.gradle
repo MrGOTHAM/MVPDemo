@@ -47,4 +47,5 @@ dependencies {
     //导入Gson 库
     implementation 'com.google.code.gson:gson:2.8.6'
     implementation 'com.android.support:recyclerview-v7:30+'
+    implementation 'com.squareup.picasso:picasso:2.71828'
 }

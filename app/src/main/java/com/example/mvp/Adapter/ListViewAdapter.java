@@ -9,9 +9,8 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.mvp.Bean.ItemBean;
-import com.example.mvp.Bean.ItemsBean;
-import com.example.mvp.Bean.NewData;
 import com.example.mvp.R;
+import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 
@@ -22,7 +21,7 @@ import java.util.ArrayList;
 public class ListViewAdapter extends RecyclerView.Adapter<ListViewAdapter.InnerHolder> {
     private ArrayList mData ;
 
-    public ListViewAdapter(ArrayList<NewData.DataBean.DatasBean> data){
+    public ListViewAdapter(ArrayList<ItemBean> data){
         mData = data;
     }
 
@@ -38,7 +37,7 @@ public class ListViewAdapter extends RecyclerView.Adapter<ListViewAdapter.InnerH
     //一般用来绑定holder， 设置数据绑定
     @Override
     public void onBindViewHolder(@NonNull InnerHolder holder, int position) {
-            holder.setData((NewData.DataBean.DatasBean) mData.get(position));
+            holder.setData((ItemBean) mData.get(position));
     }
 
     //返回数据条目
@@ -59,9 +58,13 @@ public class ListViewAdapter extends RecyclerView.Adapter<ListViewAdapter.InnerH
         }
 
 
-        public void setData(NewData.DataBean.DatasBean o) {
-            mText.setText(o.getChapterName());
-            mImageView.setImageResource(R.color.black);
+        public void setData(ItemBean o) {
+            mText.setText(o.getTitle());
+            Picasso.get()
+                    .load(o.getEnvelopePic())
+                    .placeholder(R.color.white)
+                    .error(R.color.black)
+                    .into(mImageView);
         }
     }
 }
