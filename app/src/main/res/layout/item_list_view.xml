@@ -1,24 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="90dp">
-
+    android:layout_height="92dp">
+    <TextView
+        android:layout_height="2dp"
+        android:layout_width="match_parent"
+        android:background="@color/grey_dark"
+        />
     <ImageView
-        android:id="@+id/item_listView_image"
+        android:id="@+id/item_image"
         android:layout_width="70dp"
         android:layout_height="70dp"
         android:scaleType="fitXY"
         android:layout_margin="10dp"
-        android:src="@color/teal_200"
+        android:src="@color/yellow"
         />
     <TextView
-        android:id="@+id/item_listView_text"
-        android:layout_height="wrap_content"
+        android:id="@+id/item_text"
+        android:layout_height="70dp"
         android:layout_width="wrap_content"
         android:text="这是一个条目"
         android:textSize="28sp"
         android:paddingLeft="10dp"
-        android:layout_toRightOf="@+id/item_listView_image"
+        android:layout_toRightOf="@+id/item_image"
         android:layout_centerVertical="true"
         />
 

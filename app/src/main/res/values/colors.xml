@@ -5,6 +5,39 @@
     <color name="purple_700">#FF3700B3</color>
     <color name="teal_200">#FF03DAC5</color>
     <color name="teal_700">#FF018786</color>
-    <color name="black">#FF000000</color>
-    <color name="white">#FFFFFFFF</color>
+
+    <color name="colorPrimary">#6200EE</color>
+    <color name="colorPrimaryDark">#3700B3</color>
+    <color name="colorAccent">#03DAC5</color>
+
+    <color name="white">#ffffff</color>
+    <color name="black">#000000</color>
+    <color name="alpha">#00000000</color>
+    <color name="alpha1">#2D000000</color>
+    <color name="grey">#F3F3F5</color>
+    <color name="grey_text">#B3B0B0</color>
+    <color name="white_tran">#4DFFFFFF</color>
+    <color name="thirty_transparent_black">#4d000000</color>
+    <color name="white_bofff">#B0FFFFFF</color>
+    <color name="color_4D4D4D">#4D4D4D</color>
+    <color name="grey_dark">#df565454</color>
+    <color name="red">#ed1941</color>
+    <color name="cover">#1A000000</color>
+    <color name="yellow">#F6DB8C</color>
+    <color name="yellow2">#FEDB5B</color>
+    <color name="blue">#426ab3</color>
+    <color name="blue1">#4CAFB4DB</color>
+    <color name="orange">#FF9800</color>
+
+    <color name="bg_1">#d9d6c3</color>
+    <color name="bg_2">#f8aba6</color>
+    <color name="bg_3">#d3c6a6</color>
+    <color name="bg_4">#dbce8f</color>
+    <color name="bg_5">#afb4db</color>
+    <color name="bg_6">#cde6c7</color>
+    <color name="bg_7">#fab27b</color>
+    <color name="bg_8">#f2eada</color>
+    <color name="bg_9">#fedcbd</color>
+    <color name="bg_10">#afdfe4</color>
+
 </resources>

@@ -8,6 +8,7 @@ import com.example.mvp.Presenter.MainPresenter;
 import com.example.mvp.View.BaseActivity;
 import com.example.mvp.View.GlideActivity;
 import com.example.mvp.View.IView;
+import com.example.mvp.View.ViewPagerActivity;
 
 
 public class MainActivity extends BaseActivity implements IView<String> {
@@ -35,6 +36,11 @@ public class MainActivity extends BaseActivity implements IView<String> {
 
     public void toGlideActivity(View view) {
         Intent intent = new Intent(this, GlideActivity.class);
+        startActivity(intent);
+    }
+
+    public void toViewPager(View view){
+        Intent intent = new Intent(MainActivity.this, ViewPagerActivity.class);
         startActivity(intent);
     }
 

@@ -1,26 +1,27 @@
 package com.example.mvp.View;
 
 import androidx.annotation.NonNull;
+import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
-
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Toast;
 
+import com.example.mvp.Adapter.GridViewAdapter;
 import com.example.mvp.Adapter.ListViewAdapter;
 import com.example.mvp.Bean.ItemBean;
 import com.example.mvp.Presenter.GlidePresenter;
 import com.example.mvp.R;
-import com.squareup.picasso.Picasso;
-
 import java.util.ArrayList;
 
 public class GlideActivity extends BaseActivity implements IView<ArrayList<ItemBean>>{
 
     RecyclerView mRecyclerView;
     GlidePresenter mGlidePresenter;
+    ArrayList<ItemBean> mData ;
+    private boolean isList = true;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -30,6 +31,25 @@ public class GlideActivity extends BaseActivity implements IView<ArrayList<ItemB
         mGlidePresenter = new GlidePresenter();
         mGlidePresenter.attachView(this);
         initData();
+
+    }
+
+    private void showListView(boolean isVertical) {
+        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this);
+        linearLayoutManager.setOrientation(isVertical?RecyclerView.VERTICAL : RecyclerView.HORIZONTAL);
+        mRecyclerView.setLayoutManager(linearLayoutManager);
+        ListViewAdapter listViewAdapter =new ListViewAdapter(mData);
+        listViewAdapter.setOnClickListener(position -> Toast.makeText(getApplicationContext(),mData.get(position).getTitle(),Toast.LENGTH_LONG).show());
+        mRecyclerView.setAdapter(listViewAdapter);
+    }
+
+    private void showGridView(boolean isVertical){
+        GridLayoutManager gridLayoutManager = new GridLayoutManager(this,3);
+        gridLayoutManager.setOrientation(isVertical?RecyclerView.VERTICAL : RecyclerView.HORIZONTAL);
+        mRecyclerView.setLayoutManager(gridLayoutManager);
+        GridViewAdapter gridViewAdapter =new GridViewAdapter(mData);
+        gridViewAdapter.setOnClickListener(position -> Toast.makeText(getApplicationContext(),mData.get(position).getTitle(),Toast.LENGTH_LONG).show());
+        mRecyclerView.setAdapter(gridViewAdapter);
     }
 
     public void initData(){
@@ -49,17 +69,21 @@ public class GlideActivity extends BaseActivity implements IView<ArrayList<ItemB
             // listView
             case R.id.vertical_listView:
                 Toast.makeText(this, "this is " + item.getTitle(), Toast.LENGTH_LONG).show();
+                showListView(true);
                 break;
             case R.id.horizontal_listView:
                 Toast.makeText(this, "this is " + item.getTitle(), Toast.LENGTH_LONG).show();
+                showListView(false);
                 break;
 
             //glideView
             case R.id.vertical_glideView:
                 Toast.makeText(this, "this is " + item.getTitle(), Toast.LENGTH_LONG).show();
+                showGridView(true);
                 break;
             case R.id.horizontal_glideView:
                 Toast.makeText(this, "this is " + item.getTitle(), Toast.LENGTH_LONG).show();
+                showGridView(false);
                 break;
 
             //staggerView
@@ -75,9 +99,7 @@ public class GlideActivity extends BaseActivity implements IView<ArrayList<ItemB
 
     @Override
     public void showData(ArrayList<ItemBean> data) {
-        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this);
-        mRecyclerView.setLayoutManager(linearLayoutManager);
-        ListViewAdapter listViewAdapter =new ListViewAdapter(data);
-        mRecyclerView.setAdapter(listViewAdapter);
+        mData = data;
+        showListView(true);
     }
 }
